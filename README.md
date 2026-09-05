@@ -8,7 +8,7 @@ The template is in [`save.template`](save.template).
 
 Calibre’s default save layout is `Author/Title`. This template instead:
 
-1. Groups everything by a custom **Genre** column (`#genre`).
+1. Groups everything by a custom **Genre** column (`#genre`). [Create one](https://manual.calibre-ebook.com/sub_groups.html) if your library doesn't have it.
 2. Skips the author folder when that author has **exactly one book** in the library and **no series**.
 3. Otherwise uses `author_sort` as a folder, and adds a series folder when the book is in a series.
 4. Names the file `{title} - {authors}`.
