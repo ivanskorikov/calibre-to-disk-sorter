@@ -1,0 +1,20 @@
+program:
+
+first_author = list_item($authors, 0, '&');
+
+books_by_author = book_count(
+    'authors:"""=' & first_author & '"""',
+    0
+);
+
+author_has_series =
+    book_count(
+        'authors:"""=' & first_author & '""" and series:true',
+        0
+    );
+
+if and(books_by_author ==# 1, author_has_series ==# 0) then
+    template('{#genre}/{title} - {authors}')
+else
+    template('{#genre}/{author_sort}/{series:||/}{title} - {authors}')
+fi
